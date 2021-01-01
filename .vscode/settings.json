@@ -1,0 +1,8 @@
+{
+    "editor.defaultFormatter": "Dart-Code.dart-code",
+    "dart.previewFlutterUiGuides": true,
+ 
+ 
+    "dart.previewHotReloadOnSaveWatcher": true,
+ 
+}
