@@ -20,7 +20,9 @@ class MyApp extends StatelessWidget {
     var primaryColor = Colors.purple[200];
     var accentColor = Colors.purple[200];
     var darkSurfaceColor = Colors.black87;
+    // ignore: unused_local_variable
     var lightSurfaceColor = Colors.grey[100];
+    // ignore: unused_local_variable
     var darkSTextColor = Colors.black87;
     var lightTextColor = Colors.grey[100];
 

@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_template/screens/profile.dart';
 import 'package:firebase_template/widgets/auth_button.dart';
-import 'package:firebase_template/widgets/loading.dart';
 import 'package:firebase_template/widgets/p_appbar.dart';
 import 'package:firebase_template/widgets/p_floating_action_button.dart';
 import 'package:flutter/foundation.dart';
