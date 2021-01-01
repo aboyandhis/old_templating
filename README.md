@@ -4,3 +4,6 @@
 My portfolio in Flutter / Dart on all the platforms. ... eventually
 
  
+@patkellydesigns 
+
+![Patrick Kelly](assets/readme.png)
