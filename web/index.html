@@ -1,79 +1,79 @@
 <!DOCTYPE html>
 <html>
-  <head>
- 
-    <base href="/" />
 
-    <meta charset="UTF-8" />
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
-    <meta name="description" content="A new Flutter project." />
+<head>
 
-    <!-- iOS meta tags & icons -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="firebase_template" />
-    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+  <base href="/" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png" />
+  <meta charset="UTF-8" />
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+  <meta name="description" content="A new Flutter project." />
 
-    <title>firebase_template</title>
-    <link rel="manifest" href="manifest.json" />
-  </head>
-  <body>
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="firebase_template" />
+  <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <title>@patkellydesigns</title>
+  <link rel="manifest" href="manifest.json" />
+</head>
+
+<body>
   <div id="fb-root"></div>
-  <div class="fb-customerchat"
-       attribution=setup_tool
-       page_id="104085438070482"
-       theme_color="#ffc939">
+  <div class="fb-customerchat" attribution=setup_tool page_id="104085438070482" theme_color="#ffc939">
   </div>
-    <!--      https://firebase.google.com/docs/web/setup#available-libraries -->
-  
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-messaging.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js">
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js">
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js">
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js">
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-messaging.js">
+  </script>
 
 
 
   <script>
-      var firebaseConfig = {
-        apiKey: "AIzaSyDMGP4IVyZNy1reAihGwJrY4gNXozAVFAk",
-        authDomain: "patkellydesigns-16b69.firebaseapp.com",
-        projectId: "patkellydesigns-16b69",
-        storageBucket: "patkellydesigns-16b69.appspot.com",
-        messagingSenderId: "43253377880",
-        appId: "1:43253377880:web:8b051f2cbab8088e4c532d",
-        measurementId: "G-JWCK3W58XD",
-      };
+    var firebaseConfig = {
+      apiKey: "AIzaSyDMGP4IVyZNy1reAihGwJrY4gNXozAVFAk",
+      authDomain: "patkellydesigns-16b69.firebaseapp.com",
+      projectId: "patkellydesigns-16b69",
+      storageBucket: "patkellydesigns-16b69.appspot.com",
+      messagingSenderId: "43253377880",
+      appId: "1:43253377880:web:8b051f2cbab8088e4c532d",
+      measurementId: "G-JWCK3W58XD",
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: 'v9.0'
+      });
+    };
 
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("flutter-first-frame", function () {
+        navigator.serviceWorker.register("flutter_service_worker.js");
+      });
+    }
+  </script>
 
+  <script src="main.dart.js" type="application/javascript"></script>
+</body>
 
-
-        window.fbAsyncInit = function() {
-          FB.init({
-            xfbml            : true,
-            version          : 'v9.0'
-          });
-        };
-
-        (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("flutter-first-frame", function () {
-          navigator.serviceWorker.register("flutter_service_worker.js");
-        });
-      }
-    </script>
-
-    <script src="main.dart.js" type="application/javascript"></script>
-  </body>
 </html>
