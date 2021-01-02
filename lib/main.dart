@@ -1,13 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_template/providers/auth.dart';
-import 'package:firebase_template/providers/data.dart';
-import 'package:firebase_template/providers/state.dart';
-import 'package:firebase_template/providers/theme.dart';
-import 'package:firebase_template/screens/home.dart';
 
+import 'package:firebase_template/screens/home.dart';
 import 'package:flutter/material.dart';
+
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
+
+import 'providers/index.dart';
 
 void main() async {
   await Firebase.initializeApp();
