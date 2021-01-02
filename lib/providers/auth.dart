@@ -28,20 +28,6 @@ class AuthProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // This will setup the subscription [User] changes
- StreamSubscription<User> subscribeToUserStream(Stream<User> user) {
-    if (user != null) {
-      // Update stream and notify;
-      userStream = user;
-      notifyListeners();
-      return user.listen(listenUser);
-    } else {
-      print(user);
-      notifyListeners();
-      return null;
-    }
-  }
-
   // We need a reference to this so we can dispose of it when were done
   StreamSubscription<User> _userSubscription;
 
@@ -61,8 +47,7 @@ class AuthProvider extends ChangeNotifier {
       // If everything goes well this will sign us into firebase
       if (cred.user != null) {
         // Do a null check and handle the subscription
-        _userSubscription =
-            subscribeToUserStream(_firebaseAuth.authStateChanges());
+        userStream = _firebaseAuth.authStateChanges();
         // Tell a friend
         notifyListeners();
       }

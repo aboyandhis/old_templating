@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class ThemeProvider extends ChangeNotifier {
   static final primaryColor = Colors.purple;
@@ -8,7 +10,6 @@ class ThemeProvider extends ChangeNotifier {
   static final darkSurfaceColor = Colors.black87;
   static final lightSurfaceColor = lightTextColor;
   static final darkTextColor = Colors.black87;
-  ThemeMode themeMode = ThemeMode.system;
 
   static final lightTextTheme = TextTheme(
     bodyText1: darkTextStyle,
@@ -56,17 +57,26 @@ class ThemeProvider extends ChangeNotifier {
     textTheme: lightTextTheme,
     appBarTheme: appBarThemeLight,
   );
+  get themeMode => null;
+
+  ThemeMode getInitialThemeMode(BuildContext context) {
+    Brightness brightness = MediaQuery.platformBrightnessOf(context);
+    if (brightness == Brightness.light) {
+      themeDark = false;
+      notifyListeners();
+      return ThemeMode.light;
+    } else {
+      themeDark = true;
+      notifyListeners();
+      return ThemeMode.dark;
+    }
+  }
 
   bool themeDark = false;
-
   toggleDark() {
     // Flip the bool
     themeDark = !themeDark;
-    // Swap modes
-    themeDark ? themeMode = ThemeMode.dark : themeMode = ThemeMode.light;
+
     notifyListeners();
   }
-
-  // Need?
-  ThemeData getTheme() => themeDark ? darkTheme : lightTheme;
 }

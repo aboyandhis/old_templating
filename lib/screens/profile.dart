@@ -1,28 +1,35 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_template/providers/auth.dart';
+import 'package:firebase_template/providers/index.dart';
 import 'package:firebase_template/widgets/loading.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Profile extends StatelessWidget {
+  Stream<User> auth(context) => Provider.of<AuthProvider>(context).userStream;
   @override
   Widget build(BuildContext context) {
-    var _authProvider = Provider.of<AuthProvider>(context);
-
     return StreamBuilder<User>(
-        stream: _authProvider.userStream,
-        builder: (context, snapshot) {
-          return _authProvider.currentUser != null
-              ? Center(
-                  child: Card(
-                    child: Column(children: [
-                      Image.network(_authProvider.currentUser.photoURL),
-                      Text(_authProvider.currentUser.displayName),
-                    ]),
+        stream: auth(context),
+        builder: (BuildContext context, AsyncSnapshot<User> snapshot) {
+          if (snapshot.data == null)
+            return Loading();
+          else {
+            var data = snapshot.data;
+
+            return Center(
+              child: Card(
+                elevation: 3,
+                child: Column(children: [
+                  Image.network(
+                    data.photoURL,
+                    fit: BoxFit.fill,
                   ),
-                )
-              : Loading();
+                  Text(data.displayName),
+                ]),
+              ),
+            );
+          }
         });
   }
 }
