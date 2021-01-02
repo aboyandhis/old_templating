@@ -39,6 +39,7 @@ class ThemeProvider extends ChangeNotifier {
       textTheme: lightTextTheme, backgroundColor: lightSurfaceColor);
 
   final darkTheme = ThemeData(
+      scaffoldBackgroundColor: darkSurfaceColor,
       backgroundColor: darkSurfaceColor,
       appBarTheme: appBarThemeDark,
       textTheme: darkTextTheme,
@@ -47,6 +48,7 @@ class ThemeProvider extends ChangeNotifier {
       primarySwatch: primaryColor);
 
   final lightTheme = ThemeData(
+    scaffoldBackgroundColor: lightSurfaceColor,
     backgroundColor: lightSurfaceColor,
     primarySwatch: primaryColor,
     primaryColor: primary,
