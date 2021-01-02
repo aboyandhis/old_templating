@@ -18,7 +18,7 @@ class PAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Row(
         children: [
           CircleAvatar(
-            backgroundImage: AssetImage('assets/512.png'),
+            backgroundImage: AssetImage('512.png'),
             backgroundColor: Colors.transparent,
           ),
           SizedBox(width: 16),
