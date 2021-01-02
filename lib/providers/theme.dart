@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class ThemeProvider extends ChangeNotifier {
   static final primaryColor = Colors.purple;
@@ -57,25 +56,25 @@ class ThemeProvider extends ChangeNotifier {
     textTheme: lightTextTheme,
     appBarTheme: appBarThemeLight,
   );
-  get themeMode => null;
 
-  ThemeMode getInitialThemeMode(BuildContext context) {
-    Brightness brightness = MediaQuery.platformBrightnessOf(context);
-    if (brightness == Brightness.light) {
-      themeDark = false;
+  ThemeMode _currentThemeMode = ThemeMode.dark;
+  ThemeMode themeMode() {
+    if (_themeDark) {
+      _currentThemeMode = ThemeMode.dark;
       notifyListeners();
-      return ThemeMode.light;
+      return _currentThemeMode;
     } else {
-      themeDark = true;
+      _currentThemeMode = ThemeMode.light;
       notifyListeners();
-      return ThemeMode.dark;
+      return _currentThemeMode;
     }
   }
 
-  bool themeDark = false;
+  bool get themeDark => _themeDark;
+  bool _themeDark = false;
   toggleDark() {
     // Flip the bool
-    themeDark = !themeDark;
+    _themeDark = !_themeDark;
 
     notifyListeners();
   }

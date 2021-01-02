@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: '@patkellydesigns',
-          themeMode: theme.themeMode,
+          themeMode: theme.themeMode(),
           darkTheme: theme.darkTheme,
           theme: theme.lightTheme,
           home: Home(),
@@ -44,4 +44,7 @@ class MyApp extends StatelessWidget {
       }),
     );
   }
+
+  final shortcuts =
+      Shortcuts(shortcuts: <LogicalKeySet, Intent>{}, child: Home());
 }
