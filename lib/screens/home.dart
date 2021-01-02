@@ -3,7 +3,6 @@ import 'package:firebase_template/providers/auth.dart';
 import 'package:firebase_template/screens/profile.dart';
 import 'package:firebase_template/widgets/auth_button.dart';
 import 'package:firebase_template/widgets/p_appbar.dart';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
