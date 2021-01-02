@@ -29,7 +29,7 @@ class AuthProvider extends ChangeNotifier {
   }
 
   // This will setup the subscription [User] changes
-  StreamSubscription<User> subscribeToUserStream(Stream<User> user) {
+ StreamSubscription<User> subscribeToUserStream(Stream<User> user) {
     if (user != null) {
       // Update stream and notify;
       userStream = user;
